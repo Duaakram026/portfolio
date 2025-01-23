@@ -1,0 +1,108 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>My Portfolio</title> 
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="style.css">
+</head> 
+<body> 
+    <header> 
+        <nav> 
+            <div class="left">Dua's Portfolio</div> 
+            <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div> 
+            <ul> 
+                <li><a href="/">HOME</a></li> 
+                <li><a href="/">ABOUT</a></li> 
+                <li><a href="/">PROJECTS</a></li> 
+                <li><a href="/">CONTACT ME</a></li> 
+            </ul> 
+        </nav> 
+    </header> 
+    <main> 
+        <section class="firstsection"> 
+            <div class="leftsection"> 
+                Hi! My name is <span class="purple">DUA AKRAM</span> 
+                <div>And I'm a passionate</div> 
+                <div class="purple2">web developer</div> 
+            </div> 
+            <div class="rightsection"> 
+                <img src="image.webp" alt="Dua Akram" style="width:100%; max-width:400px;"> 
+            </div> 
+        </section> 
+        <hr> 
+        <section class="secondsection"> 
+            <h1>ABOUT</h1> 
+            <h4>I'm a passionate IT student with a passion for innovation and an interest in web development and cybersecurity. I'm always looking to level up my skills and knowledge.</h4> 
+            <span class="lightblue"><br>EDUCATION</span> 
+            <h4>Bachelor of Information Technology, Present (2023) <br>Benazir Bhutto Shaheed University, Lyari.</h4> 
+            <span class="skills"><br>SKILLS & INTERESTS</span> 
+            <h4>Programming Languages (HTML, CSS, JAVASCIIPT , C, C++, Python, SQL), Operating Systems (Windows, Linux), MS Office</h4> 
+        </section> 
+        <hr>
+        <section class="thirdsection">
+            <h1> MY PROJECTS</h1>
+            <div class="grid-container">
+                <div class="project">
+                  <img src="project1.png" alt="Project 1">
+                  <h3>IMAGE GALLERY</h3>
+                  <p>An image gallery where users can view a
+                    collection of images.I use HTML/CSS for layout
+                    and JavaScript for image navigation and any
+                    interactive features and also it is responsive for all devices</p>
+                </div>
+                <div class="project">
+                  <img src="project2.png" alt="Project 2">
+                  <h3>SIMPLE CALCULATOR</h3>
+                  <p>A Calculater Project with basic arithmetic
+                    operations functionalities like addition,
+                    subtraction, multiplication, and division.And also it is responsive for all devices</p>
+                </div>
+                <div class="project">
+                  <img src="project3.png" alt="Project 3">
+                  <h3>TO-DO LIST</h3>
+                  <p>A to-do list where users enter there text and also save that text too and also have function to delete the text . And it is also a responsive for all devices </p>
+                </div>
+        </section>
+        <hr> 
+        <footer> 
+            <div class="footer"> 
+                <h3>Dua's Portfolio</h3> 
+                <ul> 
+                    <li>Email: duaakram085@gmail.com</li> 
+                </ul> 
+                <p>&copy; 2025 Dua Akram | All rights reserved</p> 
+            </div> 
+        </footer> 
+    </main> 
+    <script> 
+        function toggleMenu() { 
+            const navLinks = document.querySelector('nav ul'); 
+            navLinks.classList.toggle('active'); 
+        } 
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', e => {
+              e.preventDefault();
+              document.querySelector(link.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+              });
+            });
+          });
+          const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+              }
+            });
+          });
+          
+          document.querySelectorAll('section').forEach(section => {
+            section.classList.add('hidden');
+            observer.observe(section);
+          });
+    </script> 
+</body> 
+</html>
